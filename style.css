@@ -1,0 +1,510 @@
+/* ========================= */
+/* RESET */
+/* ========================= */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* ========================= */
+/* BODY */
+/* ========================= */
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    background: #050505;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* ========================= */
+/* HEADER */
+/* ========================= */
+
+.header{
+    width: 100%;
+    height: 80px;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    z-index: 999;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 50px;
+
+    background: rgb(0, 0, 0);
+
+    backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid #39ff14;
+}
+
+/* ========================= */
+/* LOGO */
+/* ========================= */
+
+.logo img{
+    width: 60px;
+    height: auto;
+}
+
+/* ========================= */
+/* NAVBAR */
+/* ========================= */
+
+.navbar ul{
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+
+    list-style: none;
+}
+
+.navbar a{
+    text-decoration: none;
+
+    color: #b8ff3b;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+.navbar a:hover{
+    color: white;
+
+    text-shadow: 0 0 15px #39ff14;
+}
+
+/* ========================= */
+/* HERO */
+/* ========================= */
+
+.hero{
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding-top: 80px;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)),
+    url('siteproj.jpg')
+    center/cover no-repeat;
+}
+
+/* ========================= */
+/* HERO TEXT */
+/* ========================= */
+
+.hero-text h1{
+    font-size: 200px;
+
+    font-weight: 900;
+
+    color: #b8ff3b;
+
+    text-shadow:
+    0 0 10px #39ff14,
+    0 0 20px #39ff14,
+    0 0 40px #39ff14;
+
+    margin-bottom: 20px;
+}
+
+.hero-text p{
+    font-size: 40px;
+
+    color: #f1f1f1;
+
+    margin-bottom: 40px;
+}
+
+/* ========================= */
+/* BOTÃO */
+/* ========================= */
+
+.btn{
+    display: inline-block;
+
+    padding: 18px 40px;
+
+    border-radius: 50px;
+
+    text-decoration: none;
+
+    background: #b8ff3b;
+
+    color: black;
+
+    font-weight: 900;
+
+    transition: 0.3s;
+}
+
+.btn:hover{
+    transform: scale(1.05);
+
+    box-shadow:
+    0 0 15px #39ff14,
+    0 0 30px #39ff14;
+}
+
+/* ========================= */
+/* SEÇÕES */
+/* ========================= */
+
+section{
+    padding: 120px 10%;
+}
+
+/* ========================= */
+/* TITULOS */
+/* ========================= */
+
+section h2{
+    text-align: center;
+
+    font-size: 55px;
+
+    color: #b8ff3b;
+
+    margin-bottom: 60px;
+
+    text-shadow: 0 0 15px #39ff14;
+}
+
+/* ========================= */
+/* PRODUTOS */
+/* ========================= */
+
+.cards{
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+    gap: 30px;
+}
+
+/* ========================= */
+/* CARD */
+/* ========================= */
+
+.card{
+    background: #111;
+
+    border: 1px solid #39ff14;
+
+    border-radius: 25px;
+
+    padding: 25px;
+
+    transition: 0.4s;
+}
+
+.card:hover{
+    transform: translateY(-10px);
+
+    box-shadow:
+    0 0 20px #39ff14,
+    0 0 40px rgba(57,255,20,0.4);
+}
+
+/* ========================= */
+/* IMAGEM PRODUTO */
+/* ========================= */
+
+.produto-img{
+        width:350px;
+        min-height:500px;
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
+    }
+
+    .card img {
+        width: 100%;            
+        height: 200px;          
+        object-fit: cover;      
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+      }
+          
+
+/* ========================= */
+/* TEXTO CARD */
+/* ========================= */
+
+.card h3{
+    font-size: 28px;
+
+    margin-bottom: 10px;
+
+    color: #b8ff3b;
+}
+
+.card p{
+    color: #ccc;
+
+    margin-bottom: 25px;
+
+    line-height: 1.6;
+}
+
+/* ========================= */
+/* BOTÃO CARD */
+/* ========================= */
+
+.card button{
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    background: #b8ff3b;
+
+    color: black;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.card button:hover{
+    background: white;
+
+    transform: scale(1.03);
+}
+
+/* ========================= */
+/* CLIENTES */
+/* ========================= */
+
+.clientes-box{
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 25px;
+}
+
+/* ========================= */
+/* CLIENTE */
+/* ========================= */
+
+.cliente{
+    height: 180px;
+    border-radius: 16px;
+    background: #111;
+    border: 1px solid #39ff14;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+    transition: 0.3s;
+}
+
+.cliente:hover{
+    transform: scale(1.03);
+
+    box-shadow: 0 0 20px #39ff14;
+}
+
+.cliente h3{
+    color: #b8ff3b;
+
+    font-size: 20px;
+}
+
+.card-cliente {
+    background-color: #ebe3e3;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: left;
+    border: 1px solid #e5dbdb;
+  }
+  
+  .cliente {
+    font-size: 0.9rem;
+    font-weight: 650;
+    color: #b4f1a9; /* Verde neon para destacar o autor */
+    margin-bottom: 5px;
+  }
+  
+  .nota-estrelas {
+    color: #ffd700; /* Dourado para as estrelas */
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+  
+  .depoimento-texto {
+    color: #ffffff;
+    font-size: 1rem;
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+/* ========================= */
+/* SOBRE E HISTÓRIA */
+/* ========================= */
+
+.sobre p,
+.historia p{
+    max-width: 1000px;
+
+    margin: auto;
+
+    text-align: center;
+
+    font-size: 22px;
+
+    line-height: 2;
+
+    color: #ddd;
+}
+
+/* ========================= */
+/* CONTATO */
+/* ========================= */
+
+.contact-info{
+    max-width: 600px;
+
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 25px;
+}
+
+/* ========================= */
+/* CAIXAS CONTATO */
+/* ========================= */
+
+.contact-info p{
+    background: #111;
+
+    border: 1px solid #39ff14;
+
+    padding: 20px;
+
+    border-radius: 18px;
+
+    font-size: 15px;
+
+    color: #ddd;
+
+    transition: 0.3s;
+}
+
+.contact-info p:hover{
+    transform: translateY(-5px);
+
+    box-shadow:
+    0 0 15px #39ff14,
+    0 0 30px rgba(57,255,20,0.3);
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+.footer{
+    padding: 40px;
+
+    text-align: center;
+
+    border-top: 1px solid #39ff14;
+
+    background: #080808;
+}
+
+.footer p{
+    color: #999;
+
+    font-size: 15px;
+}
+
+/* ========================= */
+/* RESPONSIVO */
+/* ========================= */
+
+@media (max-width: 768px){
+
+    .navbar{
+        padding: 9px 10px;
+    }
+
+    .logo img{
+        width: 40px;
+    }
+
+    .logo h2{
+        font-size: 15px;
+    }
+
+    .menu{
+        gap: 8px;
+    }
+
+}
+
+    .hero-text h1{
+        font-size: 45px;
+    }
+
+    .hero-text p{
+        font-size: 20px;
+    }
+
+
+@media(max-width: 700px){
+
+    section h2{
+        font-size: 40px;
+    }
+
+    .hero-text h1{
+        font-size: 40px;
+    }
+
+    .hero-text p{
+        font-size: 18px;
+    }
+
+    .card h3{
+        font-size: 22px;
+    }
+
+    .sobre p,
+    .historia p{
+        font-size: 18px;
+    }
+
+}

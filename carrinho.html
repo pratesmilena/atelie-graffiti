@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Meu Carrinho - Ateliê Graffiti</title>
+    <link rel="stylesheet" href="css/carrinho.css"> 
+</head>
+<body>
+
+    <main style="padding: 20px; max-width: 800px; margin: 0 auto;">
+        <h2>Seu Carrinho</h2>
+        <br>
+        
+        <div id="container-carrinho"></div>
+
+        <hr style="border: 1px solid #2ea44f; margin: 20px 0;">
+
+        <h3>Total: R$ <span id="valor-total">0.00</span></h3>
+
+        <div id="secao-pagamento" style="margin-top: 40px; background: #111; padding: 20px; border-radius: 8px; border: 1px solid #adff2f;">
+            <h3 style="color: #fff; margin-bottom: 15px;">Escolha a Forma de Pagamento</h3>
+            
+            <div style="display: flex; gap: 20px; margin-bottom: 20px;">
+                <label style="color: #fff; cursor: pointer; font-weight: bold;">
+                    <input type="radio" name="forma-pagamento" value="pix" checked onclick="alternarMetodoPagamento('pix')"> ⚡ Pix
+                </label>
+                <label style="color: #fff; cursor: pointer; font-weight: bold;">
+                    <input type="radio" name="forma-pagamento" value="cartao" onclick="alternarMetodoPagamento('cartao')"> 💳 Cartão de Crédito
+                </label>
+            </div>
+        
+            <div id="conteudo-pix" style="display: block; text-align: center; padding: 15px; background: #1a1a1a; border-radius: 5px;">
+                <p style="color: #aaa; margin-bottom: 10px;">Escaneie o QR Code abaixo para pagar via Pix:</p>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=AtelieGraffitiPixSimulado" alt="QR Code Pix" style="border: 5px solid white; border-radius: 5px; margin-bottom: 10px;">
+                <p style="color: #adff2f; font-weight: bold; font-size: 0.9rem;">Chave Pix Copia e Cola: <br> <span style="color: #fff; font-weight: normal; font-family: monospace; background: #222; padding: 5px; display: inline-block; margin-top: 5px;">00020101021126580014br.gov.bcb.pix...</span></p>
+            </div>
+        
+            <div id="conteudo-cartao" style="display: none; background: #1a1a1a; padding: 15px; border-radius: 5px;">
+                <div style="margin-bottom: 10px;">
+                    <label style="color: #aaa; display: block; font-size: 0.9rem;">Número do Cartão:</label>
+                    <input type="text" placeholder="0000 0000 0000 0000" style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #333; background: #222; color: #fff; margin-top: 5px;">
+                </div>
+                <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+                    <div style="flex: 1;">
+                        <label style="color: #aaa; display: block; font-size: 0.9rem;">Validade:</label>
+                        <input type="text" placeholder="MM/AA" style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #333; background: #222; color: #fff; margin-top: 5px;">
+                    </div>
+                    <div style="flex: 1;">
+                        <label style="color: #aaa; display: block; font-size: 0.9rem;">CVV:</label>
+                        <input type="text" placeholder="123" style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #333; background: #222; color: #fff; margin-top: 5px;">
+                    </div>
+                </div>
+            </div>
+        
+            <button onclick="finalizarCompra()" style="margin-top: 20px; width: 100%; background: #adff2f; color: #000; border: none; padding: 12px; font-size: 1.1rem; font-weight: bold; border-radius: 5px; cursor: pointer; transition: 0.2s;">
+                Finalizar Pedido
+            </button>
+        </div>
+        
+        <br>
+        <a href="index.html" style="color: #fff; background: #222; padding: 10px; text-decoration: none; border-radius: 5px;">Continuar Comprando</a>
+    </main>
+
+    <script src="logica_carrinho.js"></script>
+</body>
+</html>

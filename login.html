@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Neon Space</title>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <style>
+        /* Configurações Globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0d0d0d;
+            color: #ffffff;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Fundo com efeito de brilho sutil */
+        body::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: #44b77242;
+            border-radius: 50%;
+            filter: blur(100px);
+            top: 10%;
+            left: 10%;
+        }
+
+        body::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(0, 255, 102, 0.1);
+            border-radius: 50%;
+            filter: blur(100px);
+            bottom: 10%;
+            right: 10%;
+        }
+
+        /* Card de Login */
+        .login-container {
+            background-color: #161616;
+            border: 1px solid #00ff66;
+            border-radius: 12px;
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 0 20px rgba(0, 255, 102, 0.2);
+            text-align: center;
+            z-index: 1;
+        }
+
+        .login-header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #ffffff;
+            letter-spacing: 1px;
+        }
+
+        .login-header h1 span {
+            color: #00ff66;
+            text-shadow: 0 0 10px rgba(0, 255, 102, 0.6);
+        }
+
+        .login-header p {
+            color: #888888;
+            font-size: 0.9rem;
+            margin-bottom: 35px;
+        }
+
+        /* Divisória */
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 25px 0;
+            color: #555;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #222;
+        }
+
+        .divider:not(:empty)::before {
+            margin-right: .25em;
+        }
+
+        .divider:not(:empty)::after {
+            margin-left: .25em;
+        }
+
+        /* Área do Botão do Google */
+        .google-btn-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        /* Link Alternativo / Rodapé */
+        .footer-link {
+            margin-top: 25px;
+            font-size: 0.85rem;
+        }
+
+        .footer-link a {
+            color: #00ff66;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-link a:hover {
+            text-shadow: 0 0 8px rgba(0, 255, 102, 0.6);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+    <div class="login-header">
+        <h1>SISTEMA<span>_</span></h1>
+        <p>Faça login ou cadastre-se com sua conta Google</p>
+    </div> <div id="g_id_onload"
+    data-client_id="1069650577166-cjv3qhe9hqo5c8ljk68i8iluh8e1sqaf.apps.googleusercontent.com"
+    data-context="signin"
+    data-callback="handleCredentialResponse"
+    data-auto_prompt="false">
+</div>
+
+<div class="google-btn-wrapper">
+    <div class="g_id_signin"
+        data-type="standard"
+        data-shape="rectangular"
+        data-theme="filled_black"
+        data-text="continue_with"
+        data-size="large"
+        data-logo_alignment="left"
+        data-width="320"> 
+    </div>
+</div>
+
+<div class="divider">ou</div>
+
+<div class="footer-link">
+    <a href="index.html">Voltar para a Página Inicial</a>
+</div>
+</div> <script>
+function handleCredentialResponse(response) {
+if (response.credential) {
+    console.log("Login feito com sucesso!");
+    
+    // Decodifica os dados do usuário do Google
+    const payload = JSON.parse(atob(response.credential.split('.')[1]));
+    
+    // Salva na memória do navegador para você saber quem está logado
+    localStorage.setItem('usuarioLogado', 'true');
+    localStorage.setItem('nomeUsuario', payload.name);
+
+    // Alerta opcional de sucesso
+    alert("Bem-vindo(a), " + payload.name + "!");
+
+    // Redireciona para a página principal (index.html)
+    window.location.href = "index.html"; 
+} else {
+    alert("Erro ao autenticar com o Google.");
+}
+}
+</script>
+
+</body>
+</html>
